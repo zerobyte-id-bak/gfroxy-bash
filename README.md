@@ -1,5 +1,5 @@
 ### About GFROXY
-This tool is used to search for free web proxy providers. Of course the proxy will be of higher quality because this tool selects proxies to be taken. This tool is suitable for use because good proxies are usually expensive. Proxy lists is obtained from [free-proxy-list.net](free-proxy-list.net "free-proxy-list.net"), [gatherproxy.com](gatherproxy.com "gatherproxy.com"), [hidemyassproxylist.org](hidemyassproxylist.org "hidemyassproxylist.org"), [us-proxy.org](us-proxy.org "us-proxy.org"), and still counting.
+This tool is used to search free proxy from proxy providers. Of course proxy is higher quality because proxy will be selected before taken. Good proxies are usually expensive! free is freedom solution!. Proxy lists is obtained from [free-proxy-list.net](free-proxy-list.net "free-proxy-list.net"), [gatherproxy.com](gatherproxy.com "gatherproxy.com"), [hidemyassproxylist.org](hidemyassproxylist.org "hidemyassproxylist.org"), [us-proxy.org](us-proxy.org "us-proxy.org"), and still counting.
 
 ![](https://raw.githubusercontent.com/zerobyte-id/gfroxy-bash/master/GFROXY.png)
 
