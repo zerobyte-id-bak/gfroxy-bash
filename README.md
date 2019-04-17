@@ -26,17 +26,19 @@ Run it:
 -  -g [STRING] - (value: "proxy") This parameter is used to generate proxy list.
 -  -o [FILE]   - (value: /path-to/file) This parameter is used to save proxy list to another file.
 -  -t [INT]    - (value: 30) When checking proxies, you can change threads through this parameter. Bigger is faster (but takes a lot resources)
--  -l [STRING] - This parameter is used to show proxy list that you have obtained. The value that can be used as follows:
- - "full" to display all proxies that you have obtained along with country-code
- - "random" to display one proxy randomly
- - "proxy" to display all proxies without country-code.
+-  -l [STRING] - This parameter is used to show proxy list that you have obtained. The value that can be used as follows: "full" to display all proxies that you have obtained along with country-code, "random" to display one proxy randomly, and "proxy" to display all proxies without country-code.
 
 ##### Example:
 To generate proxy:
+
+
     # gfroxy -g proxy
     # gfroxy -g proxy -t 30
     # gfroxy -g proxy -t 30 -o /path-to/filename
+
 To show list:
+
+
     # gfroxy -l full
     # gfroxy -l proxy
     # gfroxy -l random
