@@ -21,7 +21,7 @@ CLR='\e[0m'
 
 if [[ -z $(command -v curl) ]]
 then
-	echo "ERROR: Please install \"curl\" first!"
+	echo -e "${RED}ERROR: Please install \"curl\" first!${CLR}"
 	exit
 fi
 
@@ -135,7 +135,7 @@ then
 		cp /tmp/proxychecked.live ${SAVETOFILE} 2> /tmp/gfroxyerror
 		if [[ ! -f ${SAVETOFILE} ]]
 		then
-			echo "${RED}ERROR: Cannot save to ${SAVETOFILE}${CLR}"
+			echo -e "${RED}ERROR: Cannot save to ${SAVETOFILE}${CLR}"
 			rm /tmp/gfroxyerror
 			exit
 		fi
@@ -144,7 +144,7 @@ elif [[ ! -z ${SHOWLIST} ]];
 then
 	if [[ $(cat /tmp/proxychecked.live | wc -l) -lt 1 ]]
 	then
-		echo "${RED}ERROR: Proxy list is empty"
+		echo -e "${RED}ERROR: Proxy list is empty${CLR}"
 		exit
 	elif [[ ${SHOWLIST} == "proxy" ]]
 	then
