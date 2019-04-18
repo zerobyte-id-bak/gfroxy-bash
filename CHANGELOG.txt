@@ -1,0 +1,2 @@
+2.0 : - Change parsing mechanism from grep -Po to sed, supported on Android (Termux).
+      - Change storage to store temporary files to support Android devices (Termux).
