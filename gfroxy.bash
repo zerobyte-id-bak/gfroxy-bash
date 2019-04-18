@@ -7,7 +7,7 @@
 #  |___/                   |___/  
 #
 # Tool Name     : GFROXY - Get Free Proxy
-# Version       : 2.0
+# Version       : 2.1
 # Made w/       : BASH + Love <3
 # Privilege by  : Schopath
 # My Github     : https://github.com/panophan
@@ -49,7 +49,7 @@ function ProxyCheck() {
 	PROXY="${1}"
 	GFRXDIR="$(pwd)/gfroxy-data"
 
-	PROXYCONN=$(curl --proxy ${PROXY} --connect-timeout 3 --max-time 3 -sl "https://raw.githubusercontent.com/zerobyte-id/gfroxy-bash/master/proxy_request" 2> /dev/null)
+	PROXYCONN=$(curl --proxy ${PROXY} --connect-timeout 3 --max-time 3 -skL "https://raw.githubusercontent.com/zerobyte-id/gfroxy-bash/master/proxy_request" 2> /dev/null)
 	if [[ $PROXYCONN =~ "GFROXY_-_PROXY_RESPONSE_200_OK" ]]
 	then
 		PROXY_FULL=$(cat ${GFRXDIR}/uncheckedproxies.list | grep "${PROXY}" | head -1)
@@ -99,7 +99,7 @@ function GetProxy() {
 		cat ${GFRXDIR}/proxychecked.live >> ${GFRXDIR}/proxylists.txt.tmp
 	fi
 
-	cat ${GFRXDIR}/proxylists.txt.tmp | sort -nr | uniq > ${GFRXDIR}/uncheckedproxies.list
+	cat ${GFRXDIR}/proxylists.txt.tmp | sort -nr | uniq | sed 's/\[\]/\[UNK\]/g' > ${GFRXDIR}/uncheckedproxies.list
 	rm ${GFRXDIR}/proxylists.txt.tmp
 
 	echo "INFO: You got $(cat ${GFRXDIR}/uncheckedproxies.list | wc -l) proxies (uncheck)"
@@ -147,10 +147,8 @@ then
 	GetProxy ${THREADS}
 	if [[ -z ${SAVETOFILE} ]]
 	then
-		echo -e "${RED}ERROR: Invalid argument${CLR}"
-		exit
-	fi
-	if [[ -f ${GFRXDIR}/proxychecked.live ]]
+		echo -ne ""
+	elif [[ -f ${GFRXDIR}/proxychecked.live ]]
 	then
 		cp ${GFRXDIR}/proxychecked.live ${SAVETOFILE} 2> /dev/null
 		if [[ ! -f ${SAVETOFILE} ]]
@@ -177,7 +175,7 @@ then
 	fi
 else
 echo '      ____                                   '
-echo '  ___|    |___       __          Version 2.0 '
+echo '  ___|    |___       __          Version 2.1 '
 echo ' (____________)__ _ / _|_ __ _____  ___   _  '
 echo '     /    \   / _` | |_| `__/ _ \ \/ / | | | '
 echo '    | o  o | | (_| |  _| | | (_) >  <| |_| | '
